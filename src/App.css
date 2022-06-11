@@ -33,9 +33,10 @@ li {
 }
 
 .users-wrapper {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   align-items: center;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 1.5em;
   padding: 10px 40px;
   flex-wrap: wrap;
@@ -45,4 +46,8 @@ li {
   width: 100px;
   height: 100px;
   border-radius: 50%;
+}
+
+.users-wrapper li {
+  text-align: center;
 }

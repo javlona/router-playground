@@ -1,9 +1,12 @@
 import React, {useState, useEffect} from 'react'
+import { useNavigate } from 'react-router-dom'
 
 
 function Home() {
   const [users, setUsers] = useState([])
   const [loading, setLoading] = useState(true)
+  
+  const navigate = useNavigate() 
   
   useEffect(() => {
     fetch('https://api.github.com/users')
@@ -14,6 +17,9 @@ function Home() {
       })
   }, [])
 
+  const gateHandler = (login) => {
+    navigate(`/user/${login}`)
+  }
   
   return (
     <div className="home">
@@ -22,7 +28,7 @@ function Home() {
         {
           loading ? <div>Loading...</div> :
           users.map(user => (
-            <li key={user.id}>
+            <li key={user.id} onClick={() => gateHandler(user.login)} >
               <img src={user.avatar_url} alt={user.login} />
               <p>{user.login}</p>
             </li>
