@@ -63,12 +63,20 @@ li {
 }
 
 /* Pagination */
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+  padding: 10px 40px;
+
+}
 
 .pagination {
   display: inline-block;
 }
 
-.pagination a {
+.pagination button {
   color: black;
   float: left;
   padding: 8px 16px;
@@ -77,7 +85,7 @@ li {
   border: 1px solid #ddd;
 }
 
-.pagination a.active {
+.pagination button.active {
   background-color: #2980b9;
   color: white;
   border: 1px solid #2980b9;
