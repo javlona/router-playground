@@ -62,11 +62,16 @@ li {
   font-weight: bold;
 }
 
+.load-more {
+  text-align: center;
+}
+
 /* Pagination */
 .pagination-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   gap: 1.5em;
   padding: 10px 40px;
 
