@@ -5,11 +5,14 @@ import { useNavigate } from 'react-router-dom'
 function Home() {
   const [users, setUsers] = useState([])
   const [loading, setLoading] = useState(true)
-  
+  const [page, setPage] = useState(0)
+
+  let url = `https://api.github.com/users?since=${page}&per_page=100`
+
   const navigate = useNavigate() 
   
   useEffect(() => {
-    fetch('https://api.github.com/users')
+    fetch(url)
       .then(res => res.json())
       .then(data => {
         setUsers(data)
