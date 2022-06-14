@@ -26,7 +26,7 @@ function Home() {
   }
 
   const handlePageChange = (page) => {
-    setPage(page-1)
+    setPage(perPage + page)
   }
 
   
@@ -47,15 +47,15 @@ function Home() {
         </ul>
         <button className="load-more" onClick={() => setPerPage(perPage + 49)}>Load more</button>
         <div className="pagination-wrapper">
-          <div class="pagination">
+          <div className="pagination">
             <button href="#">&laquo;</button>
-            <button href="#" className="active" onClick={(e)=> {handlePageChange(e.target.value)}}>1</button>
-            <button href="#"  onClick={(e)=> {handlePageChange(e.target.value)}}>2</button>
-            <button href="#" onClick={(e)=> {handlePageChange(e.target.value)}}>3</button>
-            <button href="#" onClick={(e)=> {handlePageChange(e.target.value)}}>4</button>
-            <button href="#" onClick={(e)=> {handlePageChange(e.target.value)}}>5</button>
-            <button href="#" onClick={(e)=> {handlePageChange(e.target.value)}}>6</button>
-            <button href="#" onClick={(e)=> {handlePageChange(e.target.value)}}>&raquo;</button>
+            <button href="#" className="active" onClick={(e)=> {handlePageChange(e.target.innerText)}}>1</button>
+            <button href="#"  onClick={(e)=> {handlePageChange(e.target.innerText)}}>2</button>
+            <button href="#" onClick={(e)=> {handlePageChange(e.target.innerText)}}>3</button>
+            <button href="#" onClick={(e)=> {handlePageChange(e.target.innerText)}}>4</button>
+            <button href="#" onClick={(e)=> {handlePageChange(e.target.innerText)}}>5</button>
+            <button href="#" onClick={(e)=> {handlePageChange(e.target.innerText)}}>6</button>
+            <button href="#" onClick={(e)=> {handlePageChange(e.target.innerText)}}>&raquo;</button>
           </div>
         </div>
       </div>
