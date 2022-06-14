@@ -61,3 +61,26 @@ li {
   font-size: 16px;
   font-weight: bold;
 }
+
+/* Pagination */
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+}
+
+.pagination a.active {
+  background-color: #2980b9;
+  color: white;
+  border: 1px solid #2980b9;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}

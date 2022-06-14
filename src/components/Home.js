@@ -6,8 +6,9 @@ function Home() {
   const [users, setUsers] = useState([])
   const [loading, setLoading] = useState(true)
   const [page, setPage] = useState(0)
+  const [perPage, setPerPage] = useState(49)
 
-  let url = `https://api.github.com/users?since=${page}&per_page=100`
+  let url = `https://api.github.com/users?since=${page}&per_page=${perPage}`
 
   const navigate = useNavigate() 
   
@@ -18,11 +19,16 @@ function Home() {
         setUsers(data)
         setLoading(false)
       })
-  }, [])
+  }, [perPage, page])
 
   const gateHandler = (login) => {
     navigate(`/user/${login}`)
   }
+
+  const handlePageChange = (page) => {
+    setPage(page-1)
+  }
+
   
   return (
     <div className="home">
@@ -39,6 +45,19 @@ function Home() {
           ))
         }
         </ul>
+        <button className="load-more" onClick={() => setPerPage(perPage + 49)}>Load more</button>
+        <div className="pagination-wrapper">
+          <div class="pagination">
+            <button href="#">&laquo;</button>
+            <button href="#" className="active" onClick={(e)=> {handlePageChange(e.target.value)}}>1</button>
+            <button href="#"  onClick={(e)=> {handlePageChange(e.target.value)}}>2</button>
+            <button href="#" onClick={(e)=> {handlePageChange(e.target.value)}}>3</button>
+            <button href="#" onClick={(e)=> {handlePageChange(e.target.value)}}>4</button>
+            <button href="#" onClick={(e)=> {handlePageChange(e.target.value)}}>5</button>
+            <button href="#" onClick={(e)=> {handlePageChange(e.target.value)}}>6</button>
+            <button href="#" onClick={(e)=> {handlePageChange(e.target.value)}}>&raquo;</button>
+          </div>
+        </div>
       </div>
     </div>
   )
