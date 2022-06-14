@@ -51,3 +51,13 @@ li {
 .users-wrapper li {
   text-align: center;
 }
+
+.home input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}

@@ -24,6 +24,7 @@ function Home() {
   return (
     <div className="home">
       <div className="container">
+        <input type="search" placeholder="Search" />
         <ul className="users-wrapper">
         {
           loading ? <div>Loading...</div> :
