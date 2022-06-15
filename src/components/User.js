@@ -9,10 +9,7 @@ function User() {
   useEffect(() => {
     fetch(`https://api.github.com/users/${login}`)
       .then(res => res.json())
-      .then(data => {
-        setUser(data)
-        console.log(data)
-      })
+      .then(data => setUser(data))
   }, [])
 
   return (
