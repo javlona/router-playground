@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom'
 function User() {
   const [user, setUser] = useState({})
   const { login } = useParams()
-  console.log(login)
 
   useEffect(() => {
     fetch(`https://api.github.com/users/${login}`)
