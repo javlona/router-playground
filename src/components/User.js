@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { useParams } from 'react-router-dom'
 
 function User() {
@@ -11,12 +11,16 @@ function User() {
       .then(data => setUser(data))
   }, [])
 
+  const inputEl = useRef(null)
+
+  console.log(inputEl)
+
   return (
     <div className="user">
       <div className="container">
         <div className="user-wrapper">
           <div className="user__image">
-            <img src={user.avatar_url} alt={user.login} />
+            <img src={user.avatar_url} alt={user.login} ref={inputEl} />
           </div>
           <div className="user__info">
             <h2>{user.name}</h2>
